@@ -1,0 +1,83 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual Environment
+# =========================
+venv/
+env/
+ENV/
+.venv/
+
+# =========================
+# Django
+# =========================
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+
+# =========================
+# Static & Build Files
+# =========================
+staticfiles/
+build/
+dist/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# PyCharm
+# =========================
+.idea/
+
+# =========================
+# Mac/Linux/Windows System Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Test / Coverage Reports
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# =========================
+# Node Modules (if frontend included)
+# =========================
+node_modules/
+
+# =========================
+# Cache Files
+# =========================
+.cache/
+*.cache
+
+# =========================
+# Migrations Cache
+# =========================
+*.pyo
+*.pyd
+
+# =========================
+# Secret Keys / Certificates
+# =========================
+*.pem
+*.key
+*.crt
