@@ -5,9 +5,16 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 
+// Load .env variables
 dotenv.config();
 
 const app = express();
+
+// ===============================
+// Check Environment Variables
+// ===============================
+console.log("MONGO_URI:", process.env.MONGO_URI);
+console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
 
 // ===============================
 // Middleware
@@ -21,8 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "http://127.0.0.1:5173",
+      
       "http://localhost:3000",
       "http://192.168.1.7:3000",
       process.env.FRONTEND_URL,
@@ -36,15 +42,21 @@ app.use(
 // ===============================
 const connectDB = async () => {
   try {
+    // Check if MONGO_URI exists
+    if (!process.env.MONGO_URI) {
+      throw new Error("MONGO_URI is missing in .env file");
+    }
+
     await mongoose.connect(process.env.MONGO_URI);
 
-    console.log("✅ MongoDB Connected");
+    console.log("✅ MongoDB Connected Successfully");
   } catch (error) {
     console.error("❌ MongoDB Connection Error:", error.message);
     process.exit(1);
   }
 };
 
+// Connect Database
 connectDB();
 
 // ===============================
