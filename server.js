@@ -22,7 +22,6 @@ connectDB();
 app.use('/api/projects', require('./routes/projects'));
 app.use('/api/admin', require('./routes/admin'));
 // backend/server.js - Add this line with other routes
-app.use('/api/blogs', require('./routes/blogs'));
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
