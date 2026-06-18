@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: [
-      
+      "https://vaishnavimanikeriportfolio.netlify.app"
       "http://localhost:3000",
       "http://192.168.1.7:3000",
       process.env.FRONTEND_URL,
